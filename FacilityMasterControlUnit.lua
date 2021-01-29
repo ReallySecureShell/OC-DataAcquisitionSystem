@@ -152,7 +152,7 @@ local __packet =
 
 -- HELPER FUNCTIONS
 
--- Function returns all the items in a ME Subnetwork and serializes it to a string.
+-- Function returns all the items in a ME Subnetwork.
 local function getItems(cUUID)
 
     local __TMPTABLE = {}
@@ -169,7 +169,7 @@ local function getItems(cUUID)
 
 end
 
--- Function returns all the fluids in a ME Subnetwork and serializes it to a string.
+-- Function returns all the fluids in a ME Subnetwork.
 local function getFluids(cUUID)
 
     local __TMPTABLE = {}
