@@ -7,7 +7,7 @@ After downloading the script, you may remove the `Internet Card`.
 
 Then, review the example in this repository: `examples/rc.cfg`, in-order to properly configure the script.
 
-### Message format
+### Message Format
 The format of the message is as follows:
 ```
 HEADER
