@@ -5,9 +5,25 @@ This script is used to gather data on Applied Energistics 2 networks. This data 
 To install, ensure your computer has an `Internet Card`, then run the command: `wget https://raw.githubusercontent.com/ReallySecureShell/OC-DataAcquisitionSystem/main/FacilityMasterControlUnit.lua` while in /etc/rc.d.
 After downloading the script, you may remove the `Internet Card`.
 
-Then, review the example in this repository: `examples/rc.cfg`, in-order to properly configure the script.
+Then, review the example in this repository: `examples/rc.cfg`, in-order to properly configure the script. Note the key in the FacilityMasterControlUnit table named `publicKey`, this will be used later.
 
-### Message Format
+Your computer needs the following components installed:
+```
+Data Card (Tier 3)
+Linked Card
+[optional] Graphics Card (Tier 2)
+[optional] Component Bus (any tier)
+```
+It is recommended that you use a `Server (Tier 3)`, along with a `Terminal Server` for wireless keyboard.
+
+The receiving computer will also require the same components, and should also be a tier 3 server.
+
+### Setup Keypair
+On the receiving computer (the one without the FacilityMasterControlUnit.lua script), run `wget https://raw.githubusercontent.com/ReallySecureShell/OpenComputers-genkey/main/genkey`. Then run `./genkey --bits=384`. This will generate a keypair named ec-key, and ec-key.pub.
+
+Transfer `ec-key.pub` to the computer which has the FacilityMasterControlUnit.lua script. Then, configure the publicKey key in the FacilityMasterControlUnit table inside /etc/rc.cfg. The value of said key will need to be changed to the path where ec-key.pub exists on the system.
+
+## Message Format
 The format of the message is as follows:
 ```
 HEADER
