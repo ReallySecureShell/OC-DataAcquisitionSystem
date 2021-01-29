@@ -21,7 +21,7 @@ The receiving computer will also require the same components, and should also be
 ### Setup Keypair
 On the receiving computer (the one without the FacilityMasterControlUnit.lua script), run `wget https://raw.githubusercontent.com/ReallySecureShell/OpenComputers-genkey/main/genkey`. Then run `./genkey --bits=384`. This will generate a keypair named ec-key, and ec-key.pub.
 
-Transfer `ec-key.pub` to the computer which has the FacilityMasterControlUnit.lua script. Then, configure the publicKey key in the FacilityMasterControlUnit table inside /etc/rc.cfg. The value of said key will need to be changed to the path where ec-key.pub exists on the system.
+Transfer `ec-key.pub` to the sender computer (the one which has the FacilityMasterControlUnit.lua script). Preferably, transfer ec-key.pub to /home/ec-key.pub on said computer. Then, configure the publicKey key in the FacilityMasterControlUnit table inside /etc/rc.cfg. The value of said table key will need to be changed to the path where ec-key.pub exists on the system.
 
 ## Message Format
 The format of the message is as follows:
